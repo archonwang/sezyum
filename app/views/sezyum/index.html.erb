@@ -2,13 +2,15 @@
 <table class="list">
   <thead>
     <tr>
-      <th><%= t("uye") %></th>
+      <th><%= t("uye")%></th>
+      <th><%= t("harcanan_zaman") %></th>
     </tr>
   </thead>
   <tbody>
     <% @uyeler.each_with_index do |uye, i| %>
     <tr>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= uye %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t("detay") %>" href="#"><%= uye %></a></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t("saat") %></td>
     </tr>
     <% end %>
   </tbody>
