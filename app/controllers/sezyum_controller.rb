@@ -2,7 +2,7 @@ class SezyumController < ApplicationController
   unloadable
 
   def index
-    @proje = Project.find params[:proje_adi]
-    @uyeler = @proje.users
+    @project = Project.find params[:project_id]
+    @members = @project.users
   end
 end

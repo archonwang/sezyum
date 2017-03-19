@@ -1,6 +1,6 @@
 tr:
-  proje_uyeleri: "Proje Üyeleri"
-  uye: "Üye"
-  harcanan_zaman: "Harcanan Zaman"
-  saat: "Saat"
-  detay: "Detayları görmek için tıklayın"
+  project_members: "Proje Üyeleri"
+  member: "Üye"
+  spent_time: "Harcanan Zaman"
+  hours: "Saat"
+  details: "Detayları görmek için tıklayın"

@@ -1,6 +1,6 @@
 en:
-  proje_uyeleri: "Project Members"
-  uye: "Member"
-  harcanan_zaman: "Spent Time"
-  saat: "Hour(s)"
-  detay: "Click to see details"
+  project_members: "Project Members"
+  member: "Member"
+  spent_time: "Spent Time"
+  hours: "Hour(s)"
+  details: "Click to see details"

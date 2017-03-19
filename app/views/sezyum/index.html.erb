@@ -1,16 +1,18 @@
-<h2><%= t("proje_uyeleri") %></h2>
+<% html_title "Sezyum" %>
+
+<h2><%= t("project_members") %></h2>
 <table class="list">
   <thead>
     <tr>
-      <th><%= t("uye")%></th>
-      <th><%= t("harcanan_zaman") %></th>
+      <th><%= t("member")%></th>
+      <th><%= t("spent_time") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @uyeler.each_with_index do |uye, i| %>
+    <% @members.each_with_index do |member, i| %>
     <tr>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t("detay") %>" href="#"><%= uye %></a></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t("saat") %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t("details") %>" href="#"><%= member %></a></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t("hours") %></td>
     </tr>
     <% end %>
   </tbody>
