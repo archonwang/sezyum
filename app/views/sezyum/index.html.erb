@@ -1,18 +1,18 @@
 <% html_title "Sezyum" %>
 
-<h2><%= t("project_members") %></h2>
+<h2><%= t(:project_members) %></h2>
 <table class="list">
   <thead>
     <tr>
-      <th><%= t("member")%></th>
-      <th><%= t("spent_time") %></th>
+      <th><%= t(:member)%></th>
+      <th><%= t(:spent_time) %></th>
     </tr>
   </thead>
   <tbody>
     <% @members.each_with_index do |member, i| %>
     <tr>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t("details") %>" href="#"><%= member %></a></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t("hours") %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t(:details) %>" href="#"><%= member %></a></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t(:hours) %></td>
     </tr>
     <% end %>
   </tbody>
