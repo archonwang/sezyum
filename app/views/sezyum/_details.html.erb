@@ -1,0 +1,4 @@
+<h1>Detaylar <%= @details.length %></h1>
+<% @details.each do |data| %>
+  <p><%= "Tarih: #{data[:date]}, aktivite: #{data[:activity]}, iş: #{data[:issue_subject]}, yorum: #{data[:comment]}, zaman: #{data[:spent_time]}" %></p>
+<% end %>

@@ -1,6 +1,8 @@
 <% html_title "Sezyum" %>
 
 <h2><%= t(:project_members) %></h2>
+<div id="details">
+</div>
 <table class="list">
   <thead>
     <tr>
@@ -11,8 +13,8 @@
   <tbody>
     <% @members.each_with_index do |member, i| %>
     <tr>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><a title="<%= t(:details) %>" href="#"><%= member %></a></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>">789 <%= t(:hours) %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><span title="<%= t(:details) %>"><%= link_to member.name, :action => "index", remote: true, project_id: @project.id, user_id: member.id %></span></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= @total_hours[member.id] %> <%= t(:hours) %></td>
     </tr>
     <% end %>
   </tbody>

@@ -4,3 +4,6 @@ en:
   spent_time: "Spent Time"
   hours: "Hour(s)"
   details: "Click to see details"
+
+  design: "Design"
+  devel: "Development"
