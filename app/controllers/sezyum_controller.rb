@@ -29,6 +29,8 @@ class SezyumController < ApplicationController
         @user_id = params[:user_id]
         @details = Array.new
 
+        @user_name = (User.find @user_id).name
+
         @time_entries = TimeEntry.all.select do |entry|
           entry.project_id == @project_id.to_i
         end

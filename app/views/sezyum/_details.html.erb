@@ -1,4 +1,30 @@
-<h1>Detaylar <%= @details.length %></h1>
-<% @details.each do |data| %>
-  <p><%= "Tarih: #{data[:date]}, aktivite: #{data[:activity]}, iş: #{data[:issue_subject]}, yorum: #{data[:comment]}, zaman: #{data[:spent_time]}" %></p>
-<% end %>
+<h1><%= t(:details) %>: <%= @user_name %></h1>
+
+<p><a class="details-close" href="#">Kapat</a></p>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= t(:ddate)%></th>
+      <th><%= t(:activity) %></th>
+      <th><%= t(:subject) %></th>
+      <th><%= t(:comment) %></th>
+      <th><%= t(:spent_time) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @details.each_with_index do |data, i| %>
+    <tr>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:date] %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:activity] %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:issue_subject] %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:comment] %></td>
+      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:spent_time] %> <%= t(:hours) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>setListener();</script>
+
+<p><a class="details-close" href="#">Kapat</a></p>

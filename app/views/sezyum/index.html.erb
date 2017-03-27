@@ -1,8 +1,11 @@
 <% html_title "Sezyum" %>
 
 <h2><%= t(:project_members) %></h2>
-<div id="details">
+<div id="parent">
+  <div class="hidden" id="details">
+  </div>
 </div>
+
 <table class="list">
   <thead>
     <tr>
@@ -19,3 +22,8 @@
     <% end %>
   </tbody>
 </table>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'details', :plugin => 'sezyum' %>
+    <%= javascript_include_tag 'details', :plugin => 'sezyum' %>
+<% end %>

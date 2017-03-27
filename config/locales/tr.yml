@@ -7,3 +7,9 @@ tr:
 
   design: "Tasarım"
   devel: "Geliştirme"
+
+  details: "Detaylar"
+  ddate: "Tarih"
+  activity: "Faaliyet"
+  subject: "İş Konusu"
+  comment: "Yorum"

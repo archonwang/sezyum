@@ -7,3 +7,9 @@ en:
 
   design: "Design"
   devel: "Development"
+
+  details: "Details"
+  ddate: "Date"
+  activity: "Activity"
+  subject: "Issue Subject"
+  comment: "Comment"
