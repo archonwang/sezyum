@@ -2,9 +2,12 @@
 
 <p><a class="details-close" href="#">Kapat</a></p>
 
+<div id="distribution"></div>
+
 <table class="list">
   <thead>
     <tr>
+      <th><%= t(:color)%></th>
       <th><%= t(:ddate)%></th>
       <th><%= t(:activity) %></th>
       <th><%= t(:subject) %></th>
@@ -14,12 +17,16 @@
   </thead>
   <tbody>
     <% @details.each_with_index do |data, i| %>
-    <tr>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:date] %></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:activity] %></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:issue_subject] %></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:comment] %></td>
-      <td class="<%= i % 2 == 0 ? 'odd' : 'even' %>"><%= data[:spent_time] %> <%= t(:hours) %></td>
+    <tr class="<%= i % 2 == 0 ? 'odd' : 'even' %>">
+      <td style="background-color: hsl(<%= data[:hue] %>, 80%, 60%); height: 100%; width: 15px;"></td>
+      <td><%= data[:date] %></td>
+      <td><%= data[:activity] %></td>
+      <td><%= data[:issue_subject] %></td>
+      <td><%= data[:comment] %></td>
+      <td>
+        <%= data[:spent_time] %> <%= t(:hours) %>
+        <script>percentage(<%= data[:spent_time] %>, <%= @total_hours %>, "hsl(<%= data[:hue] %>, 80%, 60%)")</script>
+      </td>
     </tr>
     <% end %>
   </tbody>

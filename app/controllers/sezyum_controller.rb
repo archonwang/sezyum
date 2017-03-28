@@ -28,8 +28,11 @@ class SezyumController < ApplicationController
         @project_id = params[:project_id]
         @user_id = params[:user_id]
         @details = Array.new
+        @total_hours = 0
 
         @user_name = (User.find @user_id).name
+
+        hue = Random.new.rand 0..360
 
         @time_entries = TimeEntry.all.select do |entry|
           entry.project_id == @project_id.to_i
@@ -47,6 +50,9 @@ class SezyumController < ApplicationController
           entry_data[:issue_subject] = (Issue.find entry.issue_id).subject
           entry_data[:comment] = entry.comments
           entry_data[:spent_time] = entry.hours
+          @total_hours +=  entry.hours
+          hue = (hue + 111) % 360;
+          entry_data[:hue] = hue
           @details.push entry_data
         end
       end
