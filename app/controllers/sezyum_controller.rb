@@ -1,6 +1,8 @@
 class SezyumController < ApplicationController
   unloadable
 
+  before_filter :find_project, :authorize, :only => :index
+
   def index
     respond_to do |frmt|
       frmt.html do
@@ -57,5 +59,10 @@ class SezyumController < ApplicationController
         end
       end
     end
+  end
+
+  private
+  def find_project
+    @project = Project.find params[:project_id]
   end
 end
